@@ -3,7 +3,8 @@ import org.junit.*;
 import java.net.URI;
 
 public class SemanticAnalysisHandlerTests {
-  @Test
+  @Test(timeout=1000)
+  
   public void handleRequest1() throws Exception {
     ChatHandler h = new ChatHandler();
     String url = "http://localhost:4000/chat?user=joe&message=hi";
@@ -12,7 +13,8 @@ public class SemanticAnalysisHandlerTests {
     assertEquals(expected, h.handleRequest(input));
   }
 
-  @Test
+  @Test(timeout=1000)
+ 
   public void handleRequestMulti() throws Exception {
     ChatHandler h = new ChatHandler();
     String url1 = "http://localhost:4000/chat?user=onat&message=good%20luck";
@@ -24,7 +26,7 @@ public class SemanticAnalysisHandlerTests {
     assertEquals(expected, h.handleRequest(input2));
   }
 
-  @Test
+  @Test(timeout = 1000)
   public void handleRequestSemanticAnalysis() throws Exception {
     ChatHandler h = new ChatHandler();
     String url1 = "http://localhost:4000/chat?user=onat&message=😂";
